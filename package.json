@@ -10,8 +10,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon .",
-    "start": "node .",
-    "fireUp": "  concurrently  \"npm run watch --prefix frontend/automation/\" \"npm run dev\""
+    "start": "npm run installAndBuild --prefix frontend/automation && npm install && npm run startUp",
+    "startUp": "node ."
   },
   "repository": {
     "type": "git",

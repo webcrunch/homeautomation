@@ -8,10 +8,11 @@ Angular
 
 ## Setup
 Clone the project first. 
-To run this project, install it locally using npm:
+To run this project, cd to the project and then install 
 
 ```
 $ cd ../homeautomation
-$ npm install
 $ npm start
 ```
+
+Browse to localhost:5080. 
