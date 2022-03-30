@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from "@angular/router";
 import { ApiCallService } from 'src/app/services/api-call.service'
 import { DetailModel } from 'src/app/models/details.model'
+import { interval } from 'rxjs';
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -21,13 +23,19 @@ export class DetailComponent implements OnInit {
     });
   }
 
+  
+
   getDeviceData(id){
     this.apiCall.getCurrentHouse(id).subscribe(result => {
       this.data = result["rooms"];
-      console.log(this.data)
+      this.handleInterval(id);
     })
-
   }
 
+  handleInterval(id){
+    interval(120000).subscribe(x => {
+      this.getDeviceData(id);
+    });
+  }
 
 }

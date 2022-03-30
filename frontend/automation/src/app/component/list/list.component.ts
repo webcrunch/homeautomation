@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiCallService } from 'src/app/services/api-call.service';
 import { MatTableDataSource } from "@angular/material/table";
 import { ListModel } from 'src/app/models/list.model'
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -20,6 +21,9 @@ export class ListComponent implements OnInit {
   
 
   ngOnInit(): void {
+      interval(120000).subscribe(x => {
+       this.HandleListData()
+      });
   }
 
   HandleListData(){
