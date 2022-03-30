@@ -8,10 +8,11 @@ Angular
 
 ## Setup
 Clone the project first. 
-To run this project, cd to the project and then install 
+To run this project, cd to the project and then start the project by instruction below:
 
 ```
-$ cd ../homeautomation
+$ cd homeautomation
+
 $ npm start
 ```
 
